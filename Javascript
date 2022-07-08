@@ -1,0 +1,28 @@
+<script>
+
+let BSearch = function (array, y) {
+  
+    let start=0, end=array.length-1;
+    while (start<=end){
+        let mid=Math.floor((start + end)/2);
+  
+        if (array[mid]===y) return true;
+ 
+        else if (array[mid] < y)
+             start = mid + 1;
+        else
+             end = mid - 1;
+    }
+  
+    return false;
+}
+  
+let array = [3,6,1,-2,4];
+let y = 2;
+  
+if (BSearch(array, y, 0, array.length-1))
+    document.write("Element found!<br>");
+else 
+   document.write("Element not found!<br>");
+  
+</script>         
