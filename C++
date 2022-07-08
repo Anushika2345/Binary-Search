@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int BSearch(int array[], int y, int low, int high) {
+  if (high >= low) {
+    int mid = low + (high - low) / 2;
+   
+ if (array[mid] == y)
+      return mid;
+
+    if (array[mid] > y)
+      return BSearch(array, y, low, mid - 1);
+    return BSearch(array, y, mid + 1, high);
+  }
+
+  return -1;
+}
+
+int main(void) {
+  int array[] = {6,8,10,7,4,0};
+  int y = 4;
+  int n = sizeof(array) / sizeof(array[0]);
+  int result = BSearch(array, y, 0, n - 1);
+  if (result == -1)
+    printf("Not found");
+  else
+    printf("Element is found at indey %d", result);
+}
+
+
+
+
+
